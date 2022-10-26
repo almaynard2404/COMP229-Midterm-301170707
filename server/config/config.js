@@ -1,2 +1,2 @@
-export const MongoURI = "mongodb://localhost:27017/media";
+export const MongoURI = "mongodb+srv://amaynard2404:helloWorld1243@comp229-midterm-3011707.90csmzu.mongodb.net/comp229_midterm_301170707?retryWrites=true&w=majority";
 export const Secret = "someSecret";
