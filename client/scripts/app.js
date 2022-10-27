@@ -17,7 +17,7 @@
         // Step 3: Send the request
         XHR.send();
 
-        
+
         // Step 4: create an event listener/handler
         XHR.addEventListener("readystatechange", function()
         {
