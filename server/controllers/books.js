@@ -28,6 +28,8 @@ export function processAddPage(req, res, next) {
     /*****************
      * ADD CODE HERE *
      *****************/
+    let id = req.params.id;
+
     let newBook = booksModel({
         name: req.body.name,
         author: req.body.author,
@@ -41,7 +43,8 @@ export function processAddPage(req, res, next) {
             console.error(err);
             res.end(err);
         };
-        res.redirect('book/list');
+
+        res.redirect('/books/list');
     })
 }
 
