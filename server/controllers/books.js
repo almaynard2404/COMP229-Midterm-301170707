@@ -28,7 +28,6 @@ export function processAddPage(req, res, next) {
     /*****************
      * ADD CODE HERE *
      *****************/
-    let id = req.params.id;
 
     let newBook = booksModel({
         name: req.body.name,
