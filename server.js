@@ -5,7 +5,7 @@ import { HttpError } from 'http-errors';
 
 import app from './server/config/app.js';
 
-const PORT = normalizePort(process.env.PORT || 3000);
+const PORT = normalizePort(process.env.PORT || '3000');
 app.set('port', PORT);
 
 const server = http.createServer(app);
