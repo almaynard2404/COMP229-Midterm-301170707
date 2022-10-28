@@ -1,3 +1,13 @@
+<!--File: /views/content/books/list.ejs
+Student Name: Alexander Maynard
+Student ID: 301170707
+Application Name: COMP229-Midterm-301170707
+Date: 2022-10-28-->
+
+
+
+<!--Simple container and  for the /views/content/books/edit.js page content-->
+<!--**THIS PAGE USES BOOTSTRAP STYLES  AND FONT AWESOME ICONS**-->
 <main class="container">
     <div class="row">
         <div class="offset-md-1 col-md-11">
@@ -10,54 +20,66 @@
             <a href="/books/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add a Book</a>
             <br>
+            <!--Bootstrap table-->
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
+                <!--Columns names for book: title, author published year, description, price & edit/delete buttons-->
                 <tr class="d-flex">
-                    <th class="text-center col-1">Title</th>
-                    <th class="text-center col-1">Author</th>
-                    <th class="text-center col-1">Published</th>
-                    <th class="col-4">Description</th>
+                    <th class="text-center col-2">Title</th>
+                    <th class="text-center col-2">Author</th>
+                    <th class="text-center col-1">Year</th>
+                    <th class="col-5">Description</th>
                     <th class="text-center col-1">Price</th>
                     <th class="text-center col-1">Edit</th>
                     <th class="text-center col-1">Delete</th>
                 </tr>
 
-                <!-- Repeatable Template Row -->
-
+                <!-- Repeatable Template Rows for book details(name, author, etc...) -->
                 <% for(let count=0; count < books.length; count++) { %>
                     <tr class="d-flex">
-                        <td class="text-center col-1">
+                        <td class="text-center col-2">
+                            <!--book name for each book-->
                             <%= books[count].name %>
                         </td>
-                        <td class="text-center col-1">
+                        <td class="text-center col-2">
+                            <!--book author for each book-->
                             <%= books[count].author %>
                         </td>
                         <td class="text-center col-1">
+                            <!--book published(year) for each book-->
                             <%= books[count].published %>
                         </td>
-                        <td class="col-4">
+                        <td class="col-5">
+                            <!--book description for each book-->
                             <%= books[count].description %>
                         </td>
                         <td class="text-center col-1">
+                            <!--book price for each book-->
                             <%= books[count].price %>
                         </td>
+                        <!--Edit button-->
                         <td class="text-center col-1">
-                            <!-- ------------------------ -->
-                            <!-- ADD the EDIT BUTTON HERE -->
-                            <!-- ------------------------ -->
+                            <!--Edit button links to the /books/edit function. The item to be edited/updated is specified by the books[count]._id (the specific book to be edited/updated)-->
                             <a href="/books/edit/<%= books[count]._id %>" class="btn btn-primary" role="button">
-                                <i class="fas fa-pencil-alt fa-lg"></i><br>Edit</a>
+                                <i class="fas fa-pencil-alt fa"></i><br>Edit</a>
                         </td>
+                        <!--Delete button-->
                         <td class="text-center col-1">
-                            <!-- ------------------------ -->
-                            <!-- ADD the DELETE BUTTON HERE -->
-                            <!-- ------------------------ -->
+                            <!--Delete button links to the /books/delete function. The item to be deleted is specified by the books[count]._id (the specific book to be deleted)-->
                             <a href="/books/delete/<%= books[count]._id %>" class="btn btn-danger" role="button">
-                                <i class="fas fa-trash-alt fa-lg"></i>Delete</a>
+                                <i class="fas fa-trash-alt fa"></i><br>Delete</a>
                         </td>
                     </tr>
                     <% } %>
             </table>
+            <!--The <br> tags were added for spacing near the footer, to be able to see the last table item-->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
 </main>

@@ -1,14 +1,28 @@
+<!--File: /views/content/books/edit.ejs
+Student Name: Alexander Maynard
+Student ID: 301170707
+Application Name: COMP229-Midterm-301170707
+Date: 2022-10-28-->
+
+
+
+<!--Simple container for the /views/content/books/edit.js page content-->
+<!--**THIS PAGE USES BOOTSTRAP STYLES  AND FONT AWESOME ICONS**-->
 <div class="container">
+    <!--Div for page content an bootstrap styles for the content width-->
     <div class="row">
         <div class="offset-md-3 col-md-6">
+            <!--Title for the page-->
             <h1><%= title %></h1>
 
+            <!--Bootstrap form-->
             <form class="form" method="POST">
 
-                <!--Forgot the hidden id field-->
+                <!--ONLY THING CHANGED HERE-->
+                <!--Forgot the hidden id field for use when trying to edit a book-->
                 <input type="hidden" name="id" value="<%= book._id %>" >
 
-
+                <!--Area to edit/update a book name for a book-->
                 <div class="form-group">
                     <label for="nameTextField">Book Title</label>
                     <input type="text" class="form-control"
@@ -19,6 +33,7 @@
                     required>
                 </div>
 
+                <!--Area to edit/update a book author for a book-->
                 <div class="form-group">
                     <label for="authorTextField">Author</label>
                     <input type="text" class="form-control"
@@ -29,8 +44,9 @@
                     required>
                 </div>
 
+                <!--Area to edit/update a book publication year for a book-->
                 <div class="form-group">
-                    <label for="publishedTextField">Published</label>
+                    <label for="publishedTextField">Year</label>
                     <input type="text" class="form-control"
                     id="publishedTextField"
                     placeholder="Enter the Year of Publication"
@@ -39,6 +55,7 @@
                     required>
                 </div>
 
+                <!--Area to edit/update a book desription for a book-->
                 <div class="form-group">
                     <label for="descriptionTextArea">Description</label>
                     <textarea type="text" class="form-control"
@@ -50,6 +67,7 @@
                     </textarea>
                 </div>
 
+                 <!--Area to edit/update a book price for a book-->
                 <div class="form-group">
                     <label for="priceTextField">Price</label>
                     <input type="text" class="form-control"
@@ -60,6 +78,7 @@
                     required>
                 </div>
 
+                 <!--Area for submit and cancel buttons. They both redirect to the views/content/books/list.ejs page-->
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
                 
