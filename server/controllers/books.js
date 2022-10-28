@@ -5,7 +5,6 @@ Application Name: COMP229-Midterm-301170707
 Date: 2022-10-28*/
 
 
-
 // define the book model
 import booksModel from '../models/books.js';
 
