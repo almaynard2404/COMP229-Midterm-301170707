@@ -55,11 +55,11 @@ export function displayEditPage(req, res, next) {
      *****************/
      let id = req.params.id;
 
-    booksModel.findById(id, (err, book) => {
+    booksModel.findById(id, (err, Book) => {
         if(err) {
             console.error(err);
         }
-        res.render('index', { title: 'Edit Book', page: 'books/edit', book: book });
+        res.render('index', { title: 'Edit Book', page: 'books/edit', book: Book });
     })
 }
 
@@ -79,7 +79,7 @@ export function processEditPage(req, res, next) {
         price: req.body.price
     });
 
-    booksModel.updateOne({ _id: id }, newBook, (err, Book) => {
+    booksModel.updateOne({_id: id}, newBook, (err, Book) => {
         if(err) {
             console.error(err);
             res.end(err);
@@ -101,6 +101,7 @@ export function processDelete(req, res, next) {
             console.error(err);
             res.end(err);
         }
+        
         res.redirect('/books/list');
     })
 }
